@@ -41,6 +41,26 @@ const Home = () => {
         })
     }
 
+    // const fetchProduct = () => {
+    //     fetch(`/api/products/all?cat=${category}&pageNumber=${pageNumber}`)
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             setProducts(data.products)
+    //             setCount(data.count)
+    //         })
+    //         .catch(error => console.log(error))
+    // }
+
+    // const fetchProductCategory = () => {
+    //     fetch('/api/category/all')
+    //         .then(response => response.json())
+    //         .then(data => setCategories(data))
+    //         .catch(error => console.log(error))
+    // }
+
+    // Rest of your code...
+
+
     useEffect(()=>{
         fetchProduct();
     }, [category, pageNumber])
@@ -90,9 +110,9 @@ const Home = () => {
                                     <Card image={p.image.url} productName={p.name} prodLink={`/product/${p._id}`} prodCategory={p.category ? p.category.name : ''} price={p.price}/>
                                 )) 
                             }
-                     </div>
+                      </div>
                      <Pagination current ={pageNumber} total={count} onChange={(prev)=> setPageNumber(prev)} pageSize={3} />
-                   </div>
+                   </div> 
                 </div>
                
             

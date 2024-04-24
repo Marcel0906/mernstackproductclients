@@ -26,7 +26,6 @@ const SignUp = () => {
         setValues({...values, [name]: e.target.value});
     }
 
-
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
@@ -46,11 +45,39 @@ const SignUp = () => {
             
 
         } catch(err){
-            console.log(err.response.data.error);
+            // console.log(err.response.data.error);
             toast.error(err.response.data.error);
          
         }
     }
+
+
+    // const handleSubmit = async (e) =>{
+    //     e.preventDefault();
+    //     try{
+    //         const response = await fetch('/api/signup', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({ name, email, password })
+    //         });
+
+    //         const data = await response.json();
+    //         console.log(data);
+
+    //         if  (data.success === true){
+    //             setValues({name: '', email: '', password:''});
+    //             toast.success("Sign up successfully, please Login!");
+              
+    //         }
+            
+
+    //     } catch (error) {
+    //         console.error('Error:', error);
+         
+    //     }
+    // }
     
     return (
         <div>

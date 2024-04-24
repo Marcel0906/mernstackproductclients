@@ -31,9 +31,9 @@ mongoose.connect(process.env.DATABASE, {
 
 // MIDDLEWARE
 app.use(morgan('dev'));
-app.use(bodyParser.json({limit: '100mb'}));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-    limit: '100mb',
+     
     extended: true
     }));
 app.use(cookieParser());

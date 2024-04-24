@@ -43,9 +43,9 @@ const Header = ({history}) => {
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     
-                        <Link className="navbar-brand mt-2 mt-lg-0" href="#">
+                        {/* <Link className="navbar-brand mt-2 mt-lg-0" href="#">
                             MERN STACK
-                        </Link>
+                        </Link> */}
                         
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 

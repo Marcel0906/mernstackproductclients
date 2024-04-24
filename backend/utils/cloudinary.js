@@ -27,7 +27,7 @@ app.post("/users", upload.single("profilePicture"), async (req, res) => {
     const { name, email } = req.body;
 
     // user erstellen mit pfp
-    const user = new User({ name, email, profilePicture: req.file.path });
+    const user = new user({ name, email, profilePicture: req.file.path });
     //save user
     await user.save();
     res.status(201).json(user);

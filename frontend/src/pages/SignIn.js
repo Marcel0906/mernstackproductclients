@@ -21,9 +21,9 @@ const SignIn = ({history}) => {
         setValues({...values, [name]: e.target.value});
     }
 
-
     const handleSubmit = async (e) =>{
         e.preventDefault();
+        console.log(email, password);
         try{
             const {data} = await axios.post('/api/signin', {
                 email,
@@ -46,11 +46,46 @@ const SignIn = ({history}) => {
             
 
         } catch(err){
-            console.log(err.response.data.error);
+            // console.log(err.response.data.error);
             toast.error(err.response.data.error);
          
         }
     }
+    
+
+
+    // const handleSubmit = async (e) =>{
+    //     e.preventDefault();
+    //     try {
+    //         const response = await fetch('/api/signin', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({ email, password })
+    //         });
+
+    //         const data = await response.json();
+    //         console.log(data);
+
+    //         if  (data.success === true){
+    //             setValues({ email: '', password:''});
+    //             toast.success("Log In successfully");
+    //             localStorage.setItem("token", JSON.stringify(data))
+    //             if (typeof window !== "undefined"){
+    //                 setTimeout(()=>{
+    //                     history.push('/user/dashboard');
+    //                 }, 2000);
+    //             }
+              
+    //         }
+            
+
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     }
+    // }
+
     
     return (
         <div>
