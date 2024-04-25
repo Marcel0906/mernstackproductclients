@@ -7,6 +7,7 @@ const Banner = () => {
     useEffect(()=>{
         axios.get('/api/fetch/banner')
         .then((res)=>{
+            console.log("API response", res.data);
             console.log("images fetch", res.data.banners[0].images);
             setImages(res.data.banners[0].images);
         })

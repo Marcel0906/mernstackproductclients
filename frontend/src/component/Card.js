@@ -17,7 +17,7 @@ const Card = ({image, productName, prodLink, prodCategory, price}) => {
                         <h6>{prodCategory}</h6>
                         <h3>${price}</h3>
                     </div>
-                    <h3 className="mb-0 font-weight-semibold"></h3>
+                    {/* <h3 className="mb-0 font-weight-semibold"></h3> */}
                
                     <Link to={prodLink}><h6>Details</h6></Link>
                    

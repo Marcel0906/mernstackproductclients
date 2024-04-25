@@ -43,7 +43,7 @@ const UserDashboard = () => {
                </div>
             </div>
             <div className="col-sm-8">
-                <h4>other col</h4>
+                
             </div>
         </div>
     </div>

@@ -1,13 +1,13 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 
 
 
 
-const Header = ({history}) => {
-  
+const Header = () => {
+  const history = useHistory();
 
     const logOut = () =>{
         axios.get('/api/logout')

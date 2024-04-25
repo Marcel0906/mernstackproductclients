@@ -2,6 +2,13 @@ import {v2 as cloudinary} from "cloudinary";
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 import express from "express";
+import User from "../models/user.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+
+
 
 cloudinary.config({ 
     cloud_name: process.env.CLOUD_NAME, 
@@ -12,8 +19,8 @@ cloudinary.config({
   const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-      folder: "D07Test",
-      public: (req, file) => `profile_picture_${new Date().toISOString()}`,
+      folder: "ProfilePic",
+      public_id: (req, file) => `profile_picture_${getCurrentDateTime()}`,
     },
   });
   
@@ -27,7 +34,7 @@ app.post("/users", upload.single("profilePicture"), async (req, res) => {
     const { name, email } = req.body;
 
     // user erstellen mit pfp
-    const user = new user({ name, email, profilePicture: req.file.path });
+    const user = new User({ name, email, profilePicture: req.file.path });
     //save user
     await user.save();
     res.status(201).json(user);

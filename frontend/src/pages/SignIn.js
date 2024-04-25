@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+
 import axios from 'axios'
 import { toast} from 'react-toastify';
 import Header from '../component/Header'
@@ -23,7 +24,7 @@ const SignIn = ({history}) => {
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        console.log(email, password);
+        // console.log(email, password);
         try{
             const {data} = await axios.post('/api/signin', {
                 email,

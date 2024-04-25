@@ -20,7 +20,7 @@ const Home = () => {
     const fetchProduct = () =>{
         axios.get(`/api/products/all?cat=${category}&pageNumber=${pageNumber}`)
         .then((prods)=>{
-            //console.log("products", prods.data.products)
+            console.log("products", prods.data.products)
             setProducts(prods.data.products);
             setCount(prods.data.count);
         })
@@ -69,7 +69,7 @@ const Home = () => {
          fetchProductCategory();
     }, [])
 
-    console.log("filter", category);
+    // console.log("filter", category);
 
     //filter product
     const filterProduct = (e) =>{
@@ -100,7 +100,7 @@ const Home = () => {
                                     <option value="">All</option>
                                 </select>
                             </div>
-                            {/* <button onClick={filterProduct} type='submit' className='btn btn-primary mt-3'>Filter</button> */}
+                             <button onClick={filterProduct} type='submit' className='btn btn-primary mt-3'>Filter</button> 
                         </form>
                    </div>
                    <div className="col-sm-9">
