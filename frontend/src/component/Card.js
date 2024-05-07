@@ -13,11 +13,11 @@ const Card = ({image, productName, prodLink, prodCategory, price}) => {
                     <div className="mb-2">
                         <h2 className="font-weight-semibold mb-2">{productName} </h2> 
                         
-                        {/* <a href="#" className="text-muted" data-abc="true"></a>  */}
+                        <a href="#" className="text-muted" data-abc="true"></a> 
                         <h6>{prodCategory}</h6>
                         <h3>${price}</h3>
                     </div>
-                    {/* <h3 className="mb-0 font-weight-semibold"></h3> */}
+                    <h3 className="mb-0 font-weight-semibold"></h3>
                
                     <Link to={prodLink}><h6>Details</h6></Link>
                    

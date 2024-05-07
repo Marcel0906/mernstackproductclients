@@ -4,7 +4,7 @@ const AdminDashboard = () => {
   return (
     <>
         <div className="container">
-            <h1>Test dash</h1>
+            <h1>Here ist the  Admin, if you are not DarthJoker, you are not allowed to be here!!!</h1>
         </div>
 
     </>

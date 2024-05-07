@@ -20,7 +20,7 @@ const Home = () => {
     const fetchProduct = () =>{
         axios.get(`/api/products/all?cat=${category}&pageNumber=${pageNumber}`)
         .then((prods)=>{
-            console.log("products", prods.data.products)
+            //console.log("products", prods.data.products)
             setProducts(prods.data.products);
             setCount(prods.data.count);
         })
